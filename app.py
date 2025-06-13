@@ -143,7 +143,6 @@ if st.button("🔮 Predict Probability"):
         ]
 
 
-        valid_cities = list(delivery_df['city'].dropna().unique())
 
         # Example input fields
         batting_team = st.selectbox("Batting Team", valid_teams)
