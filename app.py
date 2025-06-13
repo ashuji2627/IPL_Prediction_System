@@ -6,9 +6,7 @@ import base64
 import matplotlib.pyplot as plt
 import pickle
 
-# Load the trained pipeline
-# with open('pipe.pkl', 'rb') as f:
-#     pipe = pickle.load(f)
+
 
 # ========== Background Styling ==========
 def set_bg_from_local(image_file):
