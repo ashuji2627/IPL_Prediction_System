@@ -1,4 +1,4 @@
-# 🏏 IPL Prediction System
+# IPL Prediction System
 
 An interactive and intelligent web application that predicts the winning probability of an ongoing IPL match using real-time match stats. Built with **Streamlit** and a **machine learning pipeline**, this project combines data science and engaging UI to bring an immersive experience for cricket enthusiasts.
 
@@ -6,7 +6,7 @@ An interactive and intelligent web application that predicts the winning probabi
 
 ---
 
-## 🚀 Features
+## Features
 
 - 🎯 Real-time win probability prediction using machine learning
 - ⚡ Animated probability bars and pie chart visualization
@@ -18,7 +18,7 @@ An interactive and intelligent web application that predicts the winning probabi
 
 ---
 
-## 📊 Prediction Factors (Modules)
+## Prediction Factors (Modules)
 
 This application relies on multiple **real-time match features** to predict the outcome using a trained ML model:
 
@@ -39,7 +39,7 @@ This application relies on multiple **real-time match features** to predict the 
 These parameters are fed into a trained pipeline model (`pipe.pkl`) which outputs the **win probabilities** for both teams.
 
 ---
-## 📚 Technologies Used
+## Technologies Used
 
 - **Frontend & UI**: Streamlit + Custom CSS
 - **Backend Logic**: Python & scikit-learn
