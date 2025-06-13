@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
-import pickle
+# import pickle
 from PIL import Image
 import base64
 import matplotlib.pyplot as plt
-import time
+import pickle
+
+# Load the trained pipeline
+with open('pipe.pkl', 'rb') as f:
+    pipe = pickle.load(f)
 
 # ========== Background Styling ==========
 def set_bg_from_local(image_file):
