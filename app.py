@@ -126,6 +126,20 @@ if st.button("🔮 Predict Probability"):
         crr = score / overs
         rrr = (runs_left * 6) / balls_left if balls_left > 0 else 0
 
+        valid_teams = [
+          'Sunrisers Hyderabad', 'Mumbai Indians',
+          'Royal Challengers Bangalore', 'Kolkata Knight Riders',
+          'Kings XI Punjab', 'Chennai Super Kings',
+          'Rajasthan Royals', 'Delhi Capitals'
+        ]
+
+        valid_cities = list(delivery_df['city'].dropna().unique())
+
+        # Example input fields
+        batting_team = st.selectbox("Batting Team", valid_teams)
+        bowling_team = st.selectbox("Bowling Team", [team for team in valid_teams if team != batting_team])
+        city = st.selectbox("City", valid_cities)
+
         input_df = pd.DataFrame({
             'batting_team': [batting_team],
             'bowling_team': [bowling_team],
@@ -137,6 +151,9 @@ if st.button("🔮 Predict Probability"):
             'crr': [crr],
             'rrr': [rrr]
         })
+
+        st.write("Input Columns:", input_df.columns.tolist())
+        st.write(input_df)
 
         result = pipe.predict_proba(input_df)
         loss = result[0][0]
