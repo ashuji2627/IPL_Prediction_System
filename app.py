@@ -133,6 +133,16 @@ if st.button("🔮 Predict Probability"):
           'Rajasthan Royals', 'Delhi Capitals'
         ]
 
+        valid_cities = [
+           'Hyderabad', 'Pune', 'Rajkot', 'Indore', 'Bangalore', 'Mumbai',
+           'Kolkata', 'Delhi', 'Chandigarh', 'Kanpur', 'Jaipur', 'Chennai',
+           'Cape Town', 'Port Elizabeth', 'Durban', 'Centurion', 'East London',
+           'Johannesburg', 'Kimberley', 'Bloemfontein', 'Ahmedabad', 'Cuttack',
+           'Nagpur', 'Dharamsala', 'Visakhapatnam', 'Raipur', 'Ranchi',
+           'Abu Dhabi', 'Sharjah', 'Mohali', 'Bengaluru'
+        ]
+
+
         valid_cities = list(delivery_df['city'].dropna().unique())
 
         # Example input fields
