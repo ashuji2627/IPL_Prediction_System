@@ -1,4 +1,4 @@
-# 🏏 IPL Match Win Prediction System
+# 🏏 IPL Prediction System
 
 An interactive and intelligent web application that predicts the winning probability of an ongoing IPL match using real-time match stats. Built with **Streamlit** and a **machine learning pipeline**, this project combines data science and engaging UI to bring an immersive experience for cricket enthusiasts.
 
