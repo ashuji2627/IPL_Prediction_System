@@ -149,9 +149,9 @@ if st.button("🔮 Predict Probability"):
 
 
         # Example input fields
-        batting_team = st.selectbox("Batting Team", valid_teams)
-        bowling_team = st.selectbox("Bowling Team", [team for team in valid_teams if team != batting_team])
-        city = st.selectbox("City", valid_cities)
+        # batting_team = st.selectbox("Batting Team", valid_teams)
+        # bowling_team = st.selectbox("Bowling Team", [team for team in valid_teams if team != batting_team])
+        # city = st.selectbox("City", valid_cities)
 
         input_df = pd.DataFrame({
             'batting_team': [batting_team],
