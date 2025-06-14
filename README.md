@@ -47,4 +47,4 @@ These parameters are fed into a trained pipeline model (`pipe.pkl`) which output
 - **Visualization**: Matplotlib
 - **Assets**: PIL for image handling, base64 for background encoding
 
-Running Site:- https://ipl-prediction-system.streamlit.app/
+Live Preview:- https://ipl-prediction-system.streamlit.app/
