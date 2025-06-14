@@ -5,6 +5,8 @@ from PIL import Image
 import base64
 import matplotlib.pyplot as plt
 import pickle
+import time
+
 
 
 
@@ -163,8 +165,8 @@ if st.button("🔮 Predict Probability"):
             'rrr': [rrr]
         })
 
-        st.write("Input Columns:", input_df.columns.tolist())
-        st.write(input_df)
+        # st.write("Input Columns:", input_df.columns.tolist())
+        # st.write(input_df)
 
         result = pipe.predict_proba(input_df)
         loss = result[0][0]
