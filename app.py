@@ -87,25 +87,39 @@ if dark_mode:
 
 st.markdown("<h1>\U0001F3CF IPL Prediction System</h1>", unsafe_allow_html=True)
 
+import base64
+from pathlib import Path
+
+def img_to_data_uri(path):
+    mime = "image/png"
+    data = Path(path).read_bytes()
+    return f"data:{mime};base64," + base64.b64encode(data).decode()
+team_logos = {
+    'Sunrisers Hyderabad': img_to_data_uri("team_logos/Sunrisers Hyderabad.png"),
+    'Mumbai Indians': img_to_data_uri("team_logos/Mumbai Indians.png"),
+    'Royal Challengers Bangalore': img_to_data_uri("team_logos/Royal Challengers Bangalore.png"),
+    'Kolkata Knight Riders': img_to_data_uri("team_logos/Kolkata Knight Riders.png"),
+    'Kings XI Punjab': img_to_data_uri("team_logos/Kings XI Punjab.png"),
+    'Chennai Super Kings': img_to_data_uri("team_logos/Chennai Super Kings.png"),
+    'Rajasthan Royals': img_to_data_uri("team_logos/Rajasthan Royals.png"),
+    'Delhi Capitals': img_to_data_uri("team_logos/Delhi Capitals.png"),
+}
 # ========== Team Selection ==========
 st.markdown("### \U0001F46D Select Teams and Venue")
 col1, col2 = st.columns(2)
 with col1:
     batting_team = st.selectbox('Batting Team 🟢', sorted(teams))
     try:
-        bat_logo = Image.open(f"team_logos/{batting_team}.png")
-        st.image(bat_logo, width=100)
+        st.image(team_logos[batting_team], width=100)
     except:
         st.info(f"Logo not found for {batting_team}")
 
 with col2:
     bowling_team = st.selectbox('Bowling Team 🔴', sorted(teams))
     try:
-        bowl_logo = Image.open(f"team_logos/{bowling_team}.png")
-        st.image(bowl_logo, width=100)
+        st.image(team_logos[bowling_team], width=100)
     except:
         st.info(f"Logo not found for {bowling_team}")
-
 selected_city = st.selectbox('📍 Host City', sorted(cities))
 
 # ========== Match Inputs ==========
