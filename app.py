@@ -88,15 +88,23 @@ if dark_mode:
 st.markdown("<h1>\U0001F3CF IPL Prediction System</h1>", unsafe_allow_html=True)
 
 # ========== Team Logo URLs (from Google Drive placeholders) ==========
+
+import base64
+from pathlib import Path
+
+def img_to_data_uri(path):
+    mime = "image/png"
+    data = Path(path).read_bytes()
+    return f"data:{mime};base64," + base64.b64encode(data).decode()
 team_logos = {
-    'Sunrisers Hyderabad': 'https://drive.google.com/uc?export=view&id=1q4ma4CoAVJQxfJotfJ2GQ0eX7MEfFtKM',
-    'Mumbai Indians': 'https://drive.google.com/uc?export=view&id=1rs2K2teSKNlsRFo9jmJE4eX8_DcBKosO',
-    'Royal Challengers Bangalore': 'https://drive.google.com/uc?export=view&id=1znw_gP9dlxgKOYvgcfHbO4kXtLjUXEos',
-    'Kolkata Knight Riders': 'https://drive.google.com/uc?export=view&id=129cNNe-TcHvMcBqaba2ofwgUoNftVJbW',
-    'Kings XI Punjab': 'https://drive.google.com/uc?export=view&id=1apBJAL4h3HggLRrNALItWfmP1EUE8CG3',
-    'Chennai Super Kings': 'https://drive.google.com/uc?export=view&id=1ep-zeo1b3UN-Lm3sqGWDc-_c2s7xyQBU',
-    'Rajasthan Royals': 'https://drive.google.com/uc?export=view&id=1yaU2Q8epzpLzjg8IJiCDqd-LDj7hEMVN',
-    'Delhi Capitals': 'https://drive.google.com/uc?export=view&id=169Hok7PGi1kfeNO6zq3KATVZdJdSHmGZ',
+    'Sunrisers Hyderabad': img_to_data_uri("team_logos/Sunrisers Hyderabad.png"),
+    'Mumbai Indians': img_to_data_uri("team_logos/Mumbai Indians.png"),
+    'Royal Challengers Bangalore': img_to_data_uri("team_logos/Royal Challengers Bangalore.png"),
+    'Kolkata Knight Riders': img_to_data_uri("team_logos/Kolkata Knight Riders.png"),
+    'Kings XI Punjab': img_to_data_uri("team_logos/Kings XI Punjab.png"),
+    'Chennai Super Kings': img_to_data_uri("team_logos/Chennai Super Kings.png"),
+    'Rajasthan Royals': img_to_data_uri("team_logos/Rajasthan Royals.png"),
+    'Delhi Capitals': img_to_data_uri("team_logos/Delhi Capitals.png"),
 }
 
 
@@ -107,22 +115,17 @@ col1, col2 = st.columns(2)
 
 with col1:
     batting_team = st.selectbox('Batting Team 🟢', sorted(teams))
-    bat_logo_url = team_logos.get(batting_team)
-    if bat_logo_url:
-        st.image(bat_logo_url, width=100)
-    else:
+    try:
+        st.image(team_logos[batting_team], width=100)
+    except:
         st.info(f"Logo not found for {batting_team}")
-   
-
 
 with col2:
     bowling_team = st.selectbox('Bowling Team 🔴', sorted(teams))
-    bowl_logo_url = team_logos.get(bowling_team)
-    if bowl_logo_url:
-        st.image(bowl_logo_url, width=100)
-    else:
+    try:
+        st.image(team_logos[bowling_team], width=100)
+    except:
         st.info(f"Logo not found for {bowling_team}")
-
 
 selected_city = st.selectbox('📍 Host City', sorted(cities))
 
