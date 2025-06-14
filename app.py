@@ -87,24 +87,38 @@ if dark_mode:
 
 st.markdown("<h1>\U0001F3CF IPL Prediction System</h1>", unsafe_allow_html=True)
 
+# ========== Team Logo URLs (from Google Drive placeholders) ==========
+team_logos = {
+    'Sunrisers Hyderabad': 'https://drive.google.com/file/d/1q4ma4CoAVJQxfJotfJ2GQ0eX7MEfFtKM/view?usp=drive_link',
+    'Mumbai Indians': 'https://drive.google.com/file/d/1rs2K2teSKNlsRFo9jmJE4eX8_DcBKosO/view?usp=drive_link',
+    'Royal Challengers Bangalore': 'https://drive.google.com/file/d/1znw_gP9dlxgKOYvgcfHbO4kXtLjUXEos/view?usp=drive_link',
+    'Kolkata Knight Riders': 'https://drive.google.com/file/d/129cNNe-TcHvMcBqaba2ofwgUoNftVJbW/view?usp=drive_link',
+    'Kings XI Punjab': 'https://drive.google.com/file/d/1apBJAL4h3HggLRrNALItWfmP1EUE8CG3/view?usp=drive_link',
+    'Chennai Super Kings': 'https://drive.google.com/file/d/1ep-zeo1b3UN-Lm3sqGWDc-_c2s7xyQBU/view?usp=drive_link',
+    'Rajasthan Royals': 'https://drive.google.com/file/d/1yaU2Q8epzpLzjg8IJiCDqd-LDj7hEMVN/view?usp=drive_link',
+    'Delhi Capitals': 'https://drive.google.com/file/d/169Hok7PGi1kfeNO6zq3KATVZdJdSHmGZ/view?usp=drive_link',
+}
+
 # ========== Team Selection ==========
 st.markdown("### \U0001F46D Select Teams and Venue")
 col1, col2 = st.columns(2)
+
 with col1:
     batting_team = st.selectbox('Batting Team 🟢', sorted(teams))
-    try:
-        bat_logo = Image.open(f"team_logos/{batting_team}.png")
-        st.image(bat_logo, width=100)
-    except:
+    bat_logo_url = team_logos.get(batting_team)
+    if bat_logo_url:
+        st.image(bat_logo_url, width=100)
+    else:
         st.info(f"Logo not found for {batting_team}")
 
 with col2:
     bowling_team = st.selectbox('Bowling Team 🔴', sorted(teams))
-    try:
-        bowl_logo = Image.open(f"team_logos/{bowling_team}.png")
-        st.image(bowl_logo, width=100)
-    except:
+    bowl_logo_url = team_logos.get(bowling_team)
+    if bowl_logo_url:
+        st.image(bowl_logo_url, width=100)
+    else:
         st.info(f"Logo not found for {bowling_team}")
+
 
 selected_city = st.selectbox('📍 Host City', sorted(cities))
 
