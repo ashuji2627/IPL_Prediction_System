@@ -100,6 +100,7 @@ team_logos = {
 }
 
 
+
 # ========== Team Selection ==========
 st.markdown("### \U0001F46D Select Teams and Venue")
 col1, col2 = st.columns(2)
@@ -111,6 +112,8 @@ with col1:
         st.image(bat_logo_url, width=100)
     else:
         st.info(f"Logo not found for {batting_team}")
+   
+
 
 with col2:
     bowling_team = st.selectbox('Bowling Team 🔴', sorted(teams))
