@@ -89,15 +89,16 @@ st.markdown("<h1>\U0001F3CF IPL Prediction System</h1>", unsafe_allow_html=True)
 
 # ========== Team Logo URLs (from Google Drive placeholders) ==========
 team_logos = {
-    'Sunrisers Hyderabad': 'https://drive.google.com/file/d/1q4ma4CoAVJQxfJotfJ2GQ0eX7MEfFtKM/view?usp=drive_link',
-    'Mumbai Indians': 'https://drive.google.com/file/d/1rs2K2teSKNlsRFo9jmJE4eX8_DcBKosO/view?usp=drive_link',
-    'Royal Challengers Bangalore': 'https://drive.google.com/file/d/1znw_gP9dlxgKOYvgcfHbO4kXtLjUXEos/view?usp=drive_link',
-    'Kolkata Knight Riders': 'https://drive.google.com/file/d/129cNNe-TcHvMcBqaba2ofwgUoNftVJbW/view?usp=drive_link',
-    'Kings XI Punjab': 'https://drive.google.com/file/d/1apBJAL4h3HggLRrNALItWfmP1EUE8CG3/view?usp=drive_link',
-    'Chennai Super Kings': 'https://drive.google.com/file/d/1ep-zeo1b3UN-Lm3sqGWDc-_c2s7xyQBU/view?usp=drive_link',
-    'Rajasthan Royals': 'https://drive.google.com/file/d/1yaU2Q8epzpLzjg8IJiCDqd-LDj7hEMVN/view?usp=drive_link',
-    'Delhi Capitals': 'https://drive.google.com/file/d/169Hok7PGi1kfeNO6zq3KATVZdJdSHmGZ/view?usp=drive_link',
+    'Sunrisers Hyderabad': 'https://drive.google.com/uc?export=view&id=1q4ma4CoAVJQxfJotfJ2GQ0eX7MEfFtKM',
+    'Mumbai Indians': 'https://drive.google.com/uc?export=view&id=1rs2K2teSKNlsRFo9jmJE4eX8_DcBKosO',
+    'Royal Challengers Bangalore': 'https://drive.google.com/uc?export=view&id=1znw_gP9dlxgKOYvgcfHbO4kXtLjUXEos',
+    'Kolkata Knight Riders': 'https://drive.google.com/uc?export=view&id=129cNNe-TcHvMcBqaba2ofwgUoNftVJbW',
+    'Kings XI Punjab': 'https://drive.google.com/uc?export=view&id=1apBJAL4h3HggLRrNALItWfmP1EUE8CG3',
+    'Chennai Super Kings': 'https://drive.google.com/uc?export=view&id=1ep-zeo1b3UN-Lm3sqGWDc-_c2s7xyQBU',
+    'Rajasthan Royals': 'https://drive.google.com/uc?export=view&id=1yaU2Q8epzpLzjg8IJiCDqd-LDj7hEMVN',
+    'Delhi Capitals': 'https://drive.google.com/uc?export=view&id=169Hok7PGi1kfeNO6zq3KATVZdJdSHmGZ',
 }
+
 
 # ========== Team Selection ==========
 st.markdown("### \U0001F46D Select Teams and Venue")
